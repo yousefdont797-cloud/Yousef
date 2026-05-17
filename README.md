@@ -1,11 +1,7 @@
-This C++ program creates a simple Tic Tac Toe (XO) game for two players it does:
-Displays a 3×3 game board.
-Allows two players to play:
-Player 1 uses X
-Player 2 uses O
-Players take turns entering a number from 1 to 9.
-The program places the symbol in the chosen position.
-Checks after every move if a player wins.
-Ends the game when:
-One player gets 3 symbols in a row, column, or diagonal.
-Or all spaces are filled, resulting in a draw.
+Introduction
+
+Tic Tac Toe is a simple and popular two-player game that is played on a 3×3 grid. The goal of the game is for a player to place three identical symbols, either X or O, in a row, column, or diagonal before the other player. This project demonstrates how to create a Tic Tac Toe game using the C++ programming language.
+
+The program uses important programming concepts such as structures, arrays, functions, loops, and conditional statements. A 2D array is used to represent the game board, while a struct is used to organize the game data efficiently. Functions help divide the program into smaller and easier tasks such as displaying the board, checking the winner, and making moves.
+
+The main purpose of this project is to practice problem-solving skills and understand how different C++ features work together to build an interactive console application.
