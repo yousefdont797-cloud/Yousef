@@ -1,12 +1,10 @@
 #include <iostream>
 using namespace std;
 
-// Structure for the game
 struct TicTacToe {
     char board[3][3];
 };
 
-// Function to initialize the board
 void initializeBoard(TicTacToe &game) {
     char num = '1';
 
@@ -17,7 +15,6 @@ void initializeBoard(TicTacToe &game) {
     }
 }
 
-// Function to display the board
 void displayBoard(TicTacToe game) {
     cout << "\n";
 
@@ -39,26 +36,21 @@ void displayBoard(TicTacToe game) {
     cout << "\n";
 }
 
-// Function to check winner
 bool checkWinner(TicTacToe game, char player) {
 
-    // Check rows and columns
     for (int i = 0; i < 3; i++) {
 
-        // Rows
         if (game.board[i][0] == player &&
             game.board[i][1] == player &&
             game.board[i][2] == player)
             return true;
 
-        // Columns
         if (game.board[0][i] == player &&
             game.board[1][i] == player &&
             game.board[2][i] == player)
             return true;
     }
 
-    // Diagonals
     if (game.board[0][0] == player &&
         game.board[1][1] == player &&
         game.board[2][2] == player)
@@ -72,7 +64,6 @@ bool checkWinner(TicTacToe game, char player) {
     return false;
 }
 
-// Function to make a move
 void makeMove(TicTacToe &game, int choice, char player) {
 
     int row = (choice - 1) / 3;
@@ -114,7 +105,6 @@ int main() {
         int row = (choice - 1) / 3;
         int col = (choice - 1) % 3;
 
-        // Check if position is already used
         if (game.board[row][col] == 'X' ||
             game.board[row][col] == 'O') {
 
@@ -125,7 +115,6 @@ int main() {
 
         makeMove(game, choice, currentPlayer);
 
-        // Check winner
         if (checkWinner(game, currentPlayer)) {
             displayBoard(game);
             cout << "Player " << currentPlayer
@@ -133,7 +122,6 @@ int main() {
             return 0;
         }
 
-        // Change player
         if (currentPlayer == 'X')
             currentPlayer = 'O';
         else
