@@ -16,24 +16,23 @@ void initializeBoard(TicTacToe &game) {
 }
 
 void displayBoard(TicTacToe game) {
-    cout << "\n";
+    cout << endl;
 
     for (int i = 0; i < 3; i++) {
-        cout << " ";
         for (int j = 0; j < 3; j++) {
-            cout << game.board[i][j];
+            cout << " " << game.board[i][j] << " ";
 
             if (j < 2)
-                cout << " | ";
+                cout << "|";
         }
 
-        cout << "\n";
+        cout << endl;
 
         if (i < 2)
-            cout << "---|---|---\n";
+            cout << "---|---|---" << endl;
     }
 
-    cout << "\n";
+    cout << endl;
 }
 
 bool checkWinner(TicTacToe game, char player) {
@@ -75,7 +74,7 @@ void makeMove(TicTacToe &game, int choice, char player) {
         game.board[row][col] = player;
     }
     else {
-        cout << "Position already taken!\n";
+        cout << "Position already taken! Try again.\n";
     }
 }
 
@@ -86,13 +85,13 @@ int main() {
     initializeBoard(game);
 
     int choice;
-    char currentPlayer = 'X';
+    char player = 'X';
 
     for (int turn = 0; turn < 9; turn++) {
 
         displayBoard(game);
 
-        cout << "Player " << currentPlayer
+        cout << "Player " << player
              << ", enter position (1-9): ";
         cin >> choice;
 
@@ -108,24 +107,23 @@ int main() {
         if (game.board[row][col] == 'X' ||
             game.board[row][col] == 'O') {
 
-            cout << "Position already taken!\n";
+            cout << "Position already used!\n";
             turn--;
             continue;
         }
 
-        makeMove(game, choice, currentPlayer);
+        makeMove(game, choice, player);
 
-        if (checkWinner(game, currentPlayer)) {
+        if (checkWinner(game, player)) {
             displayBoard(game);
-            cout << "Player " << currentPlayer
-                 << " wins!\n";
+            cout << "Player " << player << " wins!\n";
             return 0;
         }
 
-        if (currentPlayer == 'X')
-            currentPlayer = 'O';
+        if (player == 'X')
+            player = 'O';
         else
-            currentPlayer = 'X';
+            player = 'X';
     }
 
     displayBoard(game);
