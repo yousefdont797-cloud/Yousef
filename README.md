@@ -9,18 +9,27 @@ ________________________________________________________________________________
 FEATURES
 
 1-Two-player Tic Tac Toe game
+
 2-Uses a 2D array to store the board
+
 3-Uses a struct to organize game data
+
 4-Allows players to enter moves from 1–9
+
 5-Displays the game board after every move
 __________________________________________________________________________________________________________________________________________________________________
 TOOLS USED
 
 1-struct
+
 2-2D Array
+
 3-Functions
+
 4-Loops
+
 5-Conditions (if statements)
+
 6-cin / cout
 __________________________________________________________________________________________________________________________________________________________________
 PURPOSE OF THE PROGRAM
@@ -28,8 +37,13 @@ PURPOSE OF THE PROGRAM
 The purpose of this program is to create a simple console-based Tic Tac Toe game where two players can play against each other. It demonstrates the use of important C++ concepts such as:
 
 1-Structures
+
 2-Arrays
+
 3-Functions
+
 4-Loops
+
 5-Conditional statements
+
 6-User input and output
