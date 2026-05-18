@@ -1,25 +1,28 @@
 #include <iostream>
 using namespace std;
-
+ //struct is used to groups related data together
 struct TicTacToe {
     char board[3][3];
 };
-
+//we used this function to fill the board with numbers from 1 to 9
 void initializeBoard(TicTacToe &game) {
+//this 1 is a starting valew
     char num = '1';
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
+//this function stores the starting valeu and increase it
             game.board[i][j] = num++;
         }
     }
 }
-
+//this function display the board on the screen
 void displayBoard(TicTacToe game) {
     cout << endl;
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
+//print each board value
             cout << " " << game.board[i][j] << " ";
 
             if (j < 2)
@@ -34,7 +37,7 @@ void displayBoard(TicTacToe game) {
 
     cout << endl;
 }
-
+//this function check if theres a winner
 bool checkWinner(TicTacToe game, char player) {
 
     for (int i = 0; i < 3; i++) {
@@ -62,12 +65,12 @@ bool checkWinner(TicTacToe game, char player) {
 
     return false;
 }
-
+//Places the player's symbol on the board
 void makeMove(TicTacToe &game, int choice, char player) {
 
     int row = (choice - 1) / 3;
     int col = (choice - 1) % 3;
-
+//check if the position is free
     if (game.board[row][col] != 'X' &&
         game.board[row][col] != 'O') {
 
@@ -79,14 +82,14 @@ void makeMove(TicTacToe &game, int choice, char player) {
 }
 
 int main() {
-
+//create the board
     TicTacToe game;
-
+//fill the board with numbers
     initializeBoard(game);
-
+//stores the player input
     int choice;
     char player = 'X';
-
+//make the possible moves max
     for (int turn = 0; turn < 9; turn++) {
 
         displayBoard(game);
@@ -100,10 +103,9 @@ int main() {
             turn--;
             continue;
         }
-
         int row = (choice - 1) / 3;
         int col = (choice - 1) % 3;
-
+//check the used position
         if (game.board[row][col] == 'X' ||
             game.board[row][col] == 'O') {
 
